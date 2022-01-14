@@ -1,0 +1,18 @@
+.container-wrapper {
+    display: flex;
+    border: 1px solid rgb(102, 88, 88); 
+    gap:10px; 
+    padding: 10px 20px;
+    border: 3px solid red;
+}
+
+.container-wrapper a:nth-child(2) {
+    margin-inline-start: auto; 
+    text-decoration: none; 
+    color: black
+}
+
+a{
+    text-decoration: none; 
+    color: black
+}
