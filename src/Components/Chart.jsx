@@ -4,7 +4,7 @@ import Chart from 'chart.js/auto'
 import styled from "styled-components";
 
 const BarWrapper = styled.div`
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 `
 

@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { FaToggleOff } from "react-icons/fa"
 
 export const InfoBoxWrapper = styled.div`
     display: flex;
@@ -49,12 +50,14 @@ export const InfoBoxWrapper = styled.div`
         align-items: center;
         margin-bottom: 20px;
         // margin-top: 10px;
+        padding: 10px;
     }
     .info2{
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        padding: 10px;
         }
 
     hr{ 
@@ -79,6 +82,11 @@ export const InfoBoxWrapper = styled.div`
       .eye-toggle{
           padding: 5px;
       }
+
+      .toggle-eye{
+          font-size: 50px;
+      }
+
 `
 
 const InfoBox = () => {
@@ -107,7 +115,7 @@ const InfoBox = () => {
                     </div>
                     <p className="opac">Account Linked</p>
                 </div>
-                <button className="eye-toggle">Details</button>
+                <p className="toggle-eye"><FaToggleOff /></p>
             
             </div>
             

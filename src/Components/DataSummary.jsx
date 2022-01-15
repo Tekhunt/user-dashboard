@@ -7,7 +7,7 @@ export const DataWrapper = styled.div`
     align-items: center;
     width: 85%;
     margin: 0 auto;
-    // margin-top: 20px;
+    margin-top: 10px;
     // width: 140px;
    
 
@@ -34,6 +34,7 @@ export const DataWrapper = styled.div`
         width: 40px;
         border-radius: 50%;
         font-size: 20px;
+        padding-bottom: 5px;
     }
 
     

@@ -5,10 +5,19 @@ import InfoBox from "../Components/InfoBox"
 import ChartBar from "../Components/Chart"
 import * as Ava from "react-icons/fa";
 import styled from "styled-components"
+import SectionHeader from "../Components/SectionHeader"
+
+export const Content = styled.div`
+    box-shadow: 
+    inset 4px 4px 1px #e5ebee;
+    inset -4px -4px 5px #888888;
+    background-color: #e5ebee;
+    padding-top: 30px;
+`
 
 const Dashboard = styled.div`
     .b-hr{
-        width: 85%;
+        width: 95%;
         margin: 0 auto;
         border-color: gray;
         opacity: 0.1;
@@ -17,22 +26,23 @@ const Dashboard = styled.div`
 
     }
 `
+
 const Footer = styled.div`
 
   display: flex;
 //   justify-content: center;
   align-items: center;
-  width: 85%;
+  width: 100%;
   margin: 0 auto;
   flex-wrap: wrap;
   padding-bottom: 30px;
   
-  @media only screen and (max-width: 400px){
+  @media only screen and (max-width: 901px){
     display: none;
 }
 @media only screen and (min-width: 901px){
     display: grid;
-    gap: 5px;
+    gap: 15px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 `
@@ -40,6 +50,8 @@ const Footer = styled.div`
 const Section = styled.p`
   width: 85%;
   margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 10px
 `
 
 const MidContent = styled.div`
@@ -67,10 +79,12 @@ const MidContent = styled.div`
         // flex-wrap: wrap;
         border-radius: 8px;
         // margin-left:0px;
-        border: 3px solid teal;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        background: #fff;
+        box-shadow: 2px 2px 2px 0px #fff;
     }
+    
 }
 `
 
@@ -80,38 +94,43 @@ const BottomSection = styled.div`
     box-shadow: 13px 13px 0px 0px  #FFFFFF;
     width: 85%;
     margin: 0 auto;
+    background: #fff;
+    box-shadow: 2px 2px 2px 0px #fff;
 `
 
 const DashBoard = () => {
     return (
         <Dashboard>
             <TopHeader />
-            <Welcome />
-            <Section className='dh'>Dashbaord</Section>
-            <MidContent>
-                <div className="info-sec">
-                    <InfoBox />
-                </div>
-               
-                <div className="data-sec">
-                    <DataSummary amount='N263,367.90' text='Total Gross Paid' avatar={Ava.FaAtlassian}/>
-                    <DataSummary amount='N263,367.90' text='Total Net Paid' avatar={Ava.FaAtlassian}/>
-                    <DataSummary amount='N263,367.90' text='Total Extras Paid' avatar={Ava.FaAtlassian}/>
-                    <DataSummary amount='N263,367.90' text='Total Collections Paid' avatar={Ava.FaAtlassian}/>
-                    <DataSummary amount='N263,367.90' text='General Payment' avatar={Ava.FaAtlassian}/>
-                </div>
-            </MidContent>
-            <BottomSection>
-                <ChartBar />
-                <hr className="b-hr" />
-                <Footer>
-                    <DataSummary amount='N263,367.90' text='Total Gross Paid' avatar={Ava.FaAtlassian}/>
-                    <DataSummary amount='N263,367.90' text='Total Net Paid' avatar={Ava.FaAtlassian}/>
-                    <DataSummary amount='N263,367.90' text='Total Extras Paid' avatar={Ava.FaAtlassian}/>
-                    <DataSummary amount='N263,367.90' text='Total Collections Paid' avatar={Ava.FaAtlassian}/>
-                    <DataSummary amount='N263,367.90' text='General Payment' avatar={Ava.FaAtlassian}/>
-                </Footer>
-            </BottomSection>
+            <Content>
+                <Welcome />
+                <Section>Dashbaord</Section>
+                <MidContent>
+                    <div className="info-sec">
+                        <InfoBox />
+                    </div>
+                
+                    <div className="data-sec">
+                        <DataSummary amount='N263,367.90' text='Total Gross Paid' avatar={Ava.FaAtlassian}/>
+                        <DataSummary amount='N263,367.90' text='Total Net Paid' avatar={Ava.FaAtlassian}/>
+                        <DataSummary amount='N263,367.90' text='Total Extras Paid' avatar={Ava.FaAtlassian}/>
+                        <DataSummary amount='N263,367.90' text='Total Collections Paid' avatar={Ava.FaAtlassian}/>
+                        <DataSummary amount='N263,367.90' text='General Payment' avatar={Ava.FaAtlassian}/>
+                    </div>
+                </MidContent>
+                <BottomSection>
+                    <SectionHeader />
+                    <ChartBar />
+                    <hr className="b-hr" />
+                    <Footer>
+                        <DataSummary amount='N263,367.90' text='Total Gross Paid' avatar={Ava.FaAtlassian}/>
+                        <DataSummary amount='N263,367.90' text='Total Net Paid' avatar={Ava.FaAtlassian}/>
+                        <DataSummary amount='N263,367.90' text='Total Extras Paid' avatar={Ava.FaAtlassian}/>
+                        <DataSummary amount='N263,367.90' text='Total Collections Paid' avatar={Ava.FaAtlassian}/>
+                        <DataSummary amount='N263,367.90' text='General Payment' avatar={Ava.FaAtlassian}/>
+                    </Footer>
+                </BottomSection>
+            </Content>
         </Dashboard>
     )
 }

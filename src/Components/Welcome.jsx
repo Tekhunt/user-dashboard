@@ -6,9 +6,9 @@ export const WelcomeWrapper = styled.div`
     flex-direction: column;
     width: 85%;
     color: #fff;
-    background-color: blue;
+    background-color: #4169E1;
     margin: 0 auto;
-    padding-left: 10px;
+    padding-left: 20px;
     padding-top: 30px;
     padding-bottom: 30px;
     border-radius: 4px;
