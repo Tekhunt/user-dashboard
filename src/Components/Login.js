@@ -13,6 +13,7 @@ font-family: Poppins;
     gap: 150px;
     // font-family: 'Poppins', sans-serif;
 }
+
 .logo1{
     font-size: 50px;
 }
@@ -149,6 +150,13 @@ button {
         font-family: 'Poppins', sans-serif;
     }
 
+    .center-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     
 
     .wrapper{
@@ -236,10 +244,12 @@ function Login() {
                     
                 </div>
                 <div className="welcome-wrapper">
-                    <h2>Welcome back</h2>
-                    <p className='login'>Login into your hydrogen dashboard
-                        with your credentials
-                    </p>
+                    <div className='center-content'>
+                        <h2>Welcome back</h2>
+                        <p className='login'>Login into your hydrogen dashboard
+                            with your credentials
+                        </p>
+                    </div>
                     <form action="">
                        <div className="Email-input">
                             <label>Email or Phone number</label> <br />

@@ -92,10 +92,7 @@ export const HeaderWrapper = styled.div`
             display: flex;
         }
     }
-    @media only screen and (min-width: 550px){
-        .drop-menu{
-            display: none;
-        }
+    
     }
     
     .show-menu{
