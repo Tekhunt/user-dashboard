@@ -92,7 +92,12 @@ export const HeaderWrapper = styled.div`
             display: flex;
         }
     }
-
+    @media only screen and (min-width: 550px){
+        .drop-menu{
+            display: none;
+        }
+    }
+    
     .show-menu{
         display: none;
         // display: flex;
@@ -115,6 +120,8 @@ export const HeaderWrapper = styled.div`
         display: block;
         color: blue;
     }
+  
+
 
     .drop-img{
         height: 50px;
@@ -141,6 +148,7 @@ export const HeaderWrapper = styled.div`
         margin-bottom: 10px;
         font-size: 18px;
     }
+
     
 `
 export const DashHeader = styled.div`
