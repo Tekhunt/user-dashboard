@@ -106,6 +106,8 @@ const LoginWrapper = styled.div`
     color: rgb(133, 91, 173);
   }
 
+  /* push new changes */
+
   button {
     width: 60%;
     padding: 12px 0px;
