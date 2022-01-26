@@ -107,7 +107,7 @@ const LoginWrapper = styled.div`
   }
 
   button {
-    width: 67%;
+    width: 60%;
     padding: 12px 0px;
     border-radius: 5px;
     margin-top: 5px;
