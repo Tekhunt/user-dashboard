@@ -35,7 +35,7 @@ const ChartBar = () => {
           data: [15, 9, 90, 72, 26, 53, 60, 56, 55, 40, 35, 46]
         }, 
         {
-        label: 'Old Patients',
+        label: 'Grand Patients',
         backgroundColor: 'rgba(255, 99, 132, 0.2)',
         borderColor: 'rgba(255,99,132,1)',
         borderWidth: 3,
