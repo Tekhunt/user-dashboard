@@ -9,8 +9,9 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-        <Route path="/" element={isAuthenticated ? <Navigate to='/dashboard' /> : <Login />} />
-        <Route path="/dashboard" element={isAuthenticated ? <DashBoard /> : <Navigate to='/' />} />        
+        <Route path="/" element={<Login />} />
+        <Route path="/dashboard" element={<DashBoard />} /> 
+        {/* <Route path="/dashboard" element={isAuthenticated ? <DashBoard /> : <Navigate to='/' />} />         */}
         </Routes>
       </div>
     </Router>

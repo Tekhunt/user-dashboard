@@ -335,12 +335,13 @@ function Login() {
             <div className="check-box">
               <input type="checkbox" /> <span>Remember me</span>
             </div>
-            <button onClick={handleSubmit}>{loading? 'loading...': 'Login'}</button> <br /> <br />
-            {/* <button className="">
+            {/* <button onClick={handleSubmit}>{loading? 'loading...': 'Login'}</button> <br /> <br /> */}
+            {/* <button onClick={handleSubmit}>{loading? 'loading...': 'Login'}</button> <br /> <br /> */}
+            <button className="">
               <Link style={{ color: "white" }} to="/dashboard">
                 Dashboard
               </Link>
-            </button> */}
+            </button>
           </form>
           <div className="join">
             <p>
