@@ -1,9 +1,8 @@
-import { MdMenu, MdPayments, MdShutterSpeed, MdClose } from 'react-icons/md';
-import { MdExpandMore } from 'react-icons/md';
-import { MdNotifications } from 'react-icons/md';
-import styled from "styled-components"
-import { useState } from "react"
-
+import { MdMenu, MdPayments, MdShutterSpeed, MdClose } from "react-icons/md";
+import { MdExpandMore } from "react-icons/md";
+import { MdNotifications } from "react-icons/md";
+import styled from "styled-components";
+import { useState } from "react";
 
 export const HeaderWrapper = styled.div`
     background-color: #0a2351;
@@ -147,62 +146,100 @@ export const HeaderWrapper = styled.div`
     }
 
     
-`
+`;
 export const DashHeader = styled.div`
-    display: flex;
-    padding-top: 30px;
-    padding-bottom: 0px;
-    width: 85%;
-    margin: 0 auto;
+  display: flex;
+  padding-top: 30px;
+  padding-bottom: 0px;
+  width: 85%;
+  margin: 0 auto;
 
-    .header1{
-        margin-right: 10px;
-        border-bottom: 3px solid blue;
-    }
-`
+  .header1 {
+    margin-right: 10px;
+    border-bottom: 3px solid blue;
+  }
+`;
 
 const TopHeader = () => {
-    const [navbarOpen, setNavbarOpen] = useState(false);
-    const handleToggle = () => {
+  const [navbarOpen, setNavbarOpen] = useState(false);
+  const handleToggle = () => {
     setNavbarOpen((prev) => !prev);
   };
-    return (
-        <div>
+  return (
+    <div>
+      <HeaderWrapper>
+        <div className='sub-header'>
+          <div className='left-nav'>
+            <p>
+              <span className='span1'>
+                <MdPayments />
+              </span>{" "}
+              <span className='span2'>HydrogenPayroll</span>
+            </p>
+          </div>
 
-            <HeaderWrapper>
-            <div className="sub-header">
-                <div className="left-nav">
-                    <p><span className="span1"><MdPayments /></span> <span className="span2">HydrogenPayroll</span></p>
-                </div>
+          <div className='md-menu' onClick={handleToggle}>
+            {navbarOpen ? <MdClose /> : <MdMenu />}
+          </div>
 
-                <div className="md-menu" onClick={handleToggle}>
-                 {navbarOpen? <MdClose /> : <MdMenu /> }
-                </div>
+          <button
+            onClick={(e) => {
+              localStorage.removeItem("user");
+              window.location.pathname = "/dashboard";
+            }}>
+            Logout
+          </button>
 
-                <div className={`${navbarOpen ? "show-menu" : "icons"}`}>
-                    <a href='http://www.rect.org' className="top-icon show"><MdShutterSpeed /> </a>
-                    <a href='http://www.rect.org' className="top-icon show"><MdNotifications /> </a>
-                    <p className="hr1 show">|</p>
-                   <p className='show'> Funmi Temidayo <span className='expand'><MdExpandMore /> </span></p>
-                    <img src='https://images.unsplash.com/photo-1641652321739-b2b175d15e22?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDEyfHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60' className='show' alt='' />
-                </div>
-            </div> 
-            {navbarOpen &&
-                <div className="drop-menu">
-                    <img src='https://images.unsplash.com/photo-1641652321739-b2b175d15e22?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDEyfHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60' className='drop-img' alt='' />
-                    <p className='name'>Funmi Temidayo <span className='expand'><MdExpandMore /> </span></p>
-                    <p><MdShutterSpeed /></p>
-                    <p className='last-item'><MdNotifications /> </p>
-                </div>
-            }
-            </HeaderWrapper>
-            <DashHeader className="dash-header">
-                <p className="header1">Dashboard</p>
-                <p>Playslips</p>
-            </DashHeader>
-            
+          <div className={`${navbarOpen ? "show-menu" : "icons"}`}>
+            <a href='http://www.rect.org' className='top-icon show'>
+              <MdShutterSpeed />{" "}
+            </a>
+            <a href='http://www.rect.org' className='top-icon show'>
+              <MdNotifications />{" "}
+            </a>
+            <p className='hr1 show'>|</p>
+            <p className='show'>
+              {" "}
+              Funmi Temidayo{" "}
+              <span className='expand'>
+                <MdExpandMore />{" "}
+              </span>
+            </p>
+            <img
+              src='https://images.unsplash.com/photo-1641652321739-b2b175d15e22?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDEyfHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60'
+              className='show'
+              alt=''
+            />
+          </div>
         </div>
-    )
-}
+        {navbarOpen && (
+          <div className='drop-menu'>
+            <img
+              src='https://images.unsplash.com/photo-1641652321739-b2b175d15e22?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDEyfHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60'
+              className='drop-img'
+              alt=''
+            />
+            <p className='name'>
+              Funmi Temidayo{" "}
+              <span className='expand'>
+                <MdExpandMore />{" "}
+              </span>
+            </p>
+            <p>
+              <MdShutterSpeed />
+            </p>
+            <p className='last-item'>
+              <MdNotifications />{" "}
+            </p>
+          </div>
+        )}
+      </HeaderWrapper>
+      <DashHeader className='dash-header'>
+        <p className='header1'>Dashboard</p>
+        <p>Playslips</p>
+      </DashHeader>
+    </div>
+  );
+};
 
-export default TopHeader
+export default TopHeader;

@@ -15,10 +15,10 @@ const LoginWrapper = styled.div`
     gap: 150px;
     // font-family: 'Poppins', sans-serif;
   }
-  .error{
-      font-size: 13px;
-      margin-top: 10px;
-      color: red;
+  .error {
+    font-size: 13px;
+    margin-top: 10px;
+    color: red;
   }
 
   .logo1 {
@@ -230,60 +230,59 @@ const LoginWrapper = styled.div`
 `;
 
 function Login() {
-  const [form, setForm] = useState({ emal: "", password: "" });
+  const [form, setForm] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const { email, password } = form;
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log("handleChange: ", name, value);
     setForm({
       ...form,
       [name]: value,
     });
   };
   const handleSubmit = (e) => {
-      e.preventDefault()
-      setError("")
+    e.preventDefault();
+    setError("");
     setLoading(true);
     const token = `hydrogenhr-hris-service:password`;
-    const encodedToken = new Buffer.from(token).toString('base64');
-      const basicAuth = 'Basic ' + encodedToken;
+    const encodedToken = new Buffer.from(token).toString("base64");
+    const basicAuth = "Basic " + encodedToken;
 
-      const params = new URLSearchParams()
-      params.append('grant_type', 'password')
-      params.append('username', email)
-      params.append('password', password)
+    const params = new URLSearchParams();
+    params.append("grant_type", "password");
+    params.append("username", email);
+    params.append("password", password);
 
     axios
-      .post("https://api.staging.hydrogenhr.com/api/v1/oauth/token", 
-        params,
-        {
-            headers: {
-              'Content-Type':'application/x-www-form-urlencoded',     
-              'Authorization': basicAuth
-            },
+      .post("https://api.staging.hydrogenhr.com/api/v1/oauth/token", params, {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          Authorization: basicAuth,
+        },
       })
 
       .then((res) => {
         console.log(res.data);
         setLoading(false);
-        localStorage.setItem('user', JSON.stringify(res.data))
-        window.location.pathname = "/dashboard"
+        localStorage.setItem("user", JSON.stringify(res.data));
+        window.location.pathname = "/dashboard";
         // navigate('/dashboard')
       })
       .catch((err) => {
         setLoading(false);
-        setError("Please input correct credentials!")
-        console.log(err)
+        setError("Please input correct credentials!");
+        console.log(err);
       });
   };
 
   return (
     <LoginWrapper>
-      <div className="container">
-        <div className="wrapper">
+      <div className='container'>
+        <div className='wrapper'>
           <div>
-            <p className="logo1">
+            <p className='logo1'>
               <MdPayments />
             </p>
             {/* <img src="assets/instagram.png" alt="" /> */}
@@ -293,57 +292,56 @@ function Login() {
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. qui
               dolores dolore non ex debitis id, sequi maxime iure in!
             </p>
-            <div className="nav-bottom">
-              <a href="#">Contact us</a>
-              <a href="#">Legal</a>
-              <a href="#">Privacy</a>
+            <div className='nav-bottom'>
+              <a href='#'>Contact us</a>
+              <a href='#'>Legal</a>
+              <a href='#'>Privacy</a>
             </div>
           </div>
         </div>
-        <div className="welcome-wrapper">
-          <div className="center-content">
+        <div className='welcome-wrapper'>
+          <div className='center-content'>
             <h2>Welcome back</h2>
-            <p className="login">
+            <p className='login'>
               Login into your hydrogen dashboard with your credentials
             </p>
           </div>
-          <form action="">
-            <div className="Email-input">
+          <form onSubmit={handleSubmit}>
+            <div className='Email-input'>
               <label>Email or Phone number</label> <br />
               <input
-                type="text"
-                name="email"
+                type='text'
+                name='email'
                 value={email}
-                placeholder="Enter your email address or phone number"
+                placeholder='Enter your email address or phone number'
                 onChange={handleChange}
               />
             </div>
-            <div className="password-input">
+            <div className='password-input'>
               <div>
                 <label>Password</label>
-                <a href="#">Forget Password</a>
+                <a href='#'>Forget Password</a>
               </div>
               <input
-                type="password"
-                name="password"
+                type='password'
+                name='password'
                 value={password}
-                placeholder="***********"
+                placeholder='***********'
                 onChange={handleChange}
               />
             </div>
-            {error && <p className="error">{error}</p>}
-            <div className="check-box">
-              <input type="checkbox" /> <span>Remember me</span>
+            {error && <p className='error'>{error}</p>}
+            <div className='check-box'>
+              <input type='checkbox' /> <span>Remember me</span>
             </div>
             {/* <button onClick={handleSubmit}>{loading? 'loading...': 'Login'}</button> <br /> <br /> */}
-            {/* <button onClick={handleSubmit}>{loading? 'loading...': 'Login'}</button> <br /> <br /> */}
-            <button className="">
-              <Link style={{ color: "white" }} to="/dashboard">
-                Dashboard
-              </Link>
-            </button>
+            <button type='submit'>{loading ? "loading..." : "Login"}</button>{" "}
+            <br /> <br />
           </form>
-          <div className="join">
+          <Link style={{ color: "white" }} to='/dashboard'>
+            <button className=''>Dashboard</button>
+          </Link>
+          <div className='join'>
             <p>
               Don't have an account yet? <span>Join Hydrogen Payroll</span>
             </p>
