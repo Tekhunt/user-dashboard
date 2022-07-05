@@ -12,17 +12,18 @@ function App() {
   const isAuthenticated = localStorage.getItem("user");
   return (
     <Router>
-      <div className='App'>
+      <div className="App">
         <Routes>
-          <Route
+          {/* <Route
             path='/'
             element={isAuthenticated ? <Navigate to='/dashboard' /> : <Login />}
-          />
-          {/* <Route path="/dashboard" element={<DashBoard />} />  */}
-          <Route
+          /> */}
+          <Route path="/" element={<Login />} />
+          <Route path="/dashboard" element={<DashBoard />} />
+          {/* <Route
             path='/dashboard'
             element={isAuthenticated ? <DashBoard /> : <Navigate to='/' />}
-          />
+          /> */}
         </Routes>
       </div>
     </Router>

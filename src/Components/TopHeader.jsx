@@ -26,7 +26,7 @@ export const HeaderWrapper = styled.div`
         }
     }
 
-    
+
 
     .left-nav{
         display: flex;
@@ -91,9 +91,9 @@ export const HeaderWrapper = styled.div`
             display: flex;
         }
     }
-    
+
     }
-    
+
     .show-menu{
         display: none;
         // display: flex;
@@ -116,7 +116,7 @@ export const HeaderWrapper = styled.div`
         display: block;
         color: blue;
     }
-  
+
 
 
     .drop-img{
@@ -145,7 +145,7 @@ export const HeaderWrapper = styled.div`
         font-size: 18px;
     }
 
-    
+
 `;
 export const DashHeader = styled.div`
   display: flex;
@@ -168,74 +168,75 @@ const TopHeader = () => {
   return (
     <div>
       <HeaderWrapper>
-        <div className='sub-header'>
-          <div className='left-nav'>
+        <div className="sub-header">
+          <div className="left-nav">
             <p>
-              <span className='span1'>
+              <span className="span1">
                 <MdPayments />
               </span>{" "}
-              <span className='span2'>HydrogenPayroll</span>
+              <span className="span2">ProstackPayroll</span>
             </p>
           </div>
 
-          <div className='md-menu' onClick={handleToggle}>
+          <div className="md-menu" onClick={handleToggle}>
             {navbarOpen ? <MdClose /> : <MdMenu />}
           </div>
 
-          <button
+          {/* <button
             onClick={(e) => {
               localStorage.removeItem("user");
               window.location.pathname = "/dashboard";
-            }}>
+            }}
+          >
             Logout
-          </button>
+          </button> */}
 
           <div className={`${navbarOpen ? "show-menu" : "icons"}`}>
-            <a href='http://www.rect.org' className='top-icon show'>
+            <a href="http://www.rect.org" className="top-icon show">
               <MdShutterSpeed />{" "}
             </a>
-            <a href='http://www.rect.org' className='top-icon show'>
+            <a href="http://www.rect.org" className="top-icon show">
               <MdNotifications />{" "}
             </a>
-            <p className='hr1 show'>|</p>
-            <p className='show'>
+            <p className="hr1 show">|</p>
+            <p className="show">
               {" "}
               Funmi Temidayo{" "}
-              <span className='expand'>
+              <span className="expand">
                 <MdExpandMore />{" "}
               </span>
             </p>
             <img
-              src='https://images.unsplash.com/photo-1641652321739-b2b175d15e22?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDEyfHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60'
-              className='show'
-              alt=''
+              src="https://images.unsplash.com/photo-1641652321739-b2b175d15e22?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDEyfHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
+              className="show"
+              alt=""
             />
           </div>
         </div>
         {navbarOpen && (
-          <div className='drop-menu'>
+          <div className="drop-menu">
             <img
-              src='https://images.unsplash.com/photo-1641652321739-b2b175d15e22?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDEyfHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60'
-              className='drop-img'
-              alt=''
+              src="https://images.unsplash.com/photo-1641652321739-b2b175d15e22?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDEyfHRvd0paRnNrcEdnfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
+              className="drop-img"
+              alt=""
             />
-            <p className='name'>
+            <p className="name">
               Funmi Temidayo{" "}
-              <span className='expand'>
+              <span className="expand">
                 <MdExpandMore />{" "}
               </span>
             </p>
             <p>
               <MdShutterSpeed />
             </p>
-            <p className='last-item'>
+            <p className="last-item">
               <MdNotifications />{" "}
             </p>
           </div>
         )}
       </HeaderWrapper>
-      <DashHeader className='dash-header'>
-        <p className='header1'>Dashboard</p>
+      <DashHeader className="dash-header">
+        <p className="header1">Dashboard</p>
         <p>Playslips</p>
       </DashHeader>
     </div>

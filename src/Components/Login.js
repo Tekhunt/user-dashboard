@@ -279,71 +279,73 @@ function Login() {
 
   return (
     <LoginWrapper>
-      <div className='container'>
-        <div className='wrapper'>
+      <div className="container">
+        <div className="wrapper">
           <div>
-            <p className='logo1'>
+            <p className="logo1">
               <MdPayments />
             </p>
             {/* <img src="assets/instagram.png" alt="" /> */}
-            <h3>Hydrogen Payroll</h3>
+            <h3>Pro-stack Payroll</h3>
             <p>
               {" "}
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. qui
-              dolores dolore non ex debitis id, sequi maxime iure in!
+              Prepare and disburse employees remuneration and benefits
+              seamlessly with Pro-stack payroll management system and time
+              tracker to help you manage remote teams. It includes Payroll
+              system, reporting, and productivity monitoring tool etc.
             </p>
-            <div className='nav-bottom'>
-              <a href='#'>Contact us</a>
-              <a href='#'>Legal</a>
-              <a href='#'>Privacy</a>
+            <div className="nav-bottom">
+              <a href="#">Contact us</a>
+              <a href="#">Legal</a>
+              <a href="#">Privacy</a>
             </div>
           </div>
         </div>
-        <div className='welcome-wrapper'>
-          <div className='center-content'>
+        <div className="welcome-wrapper">
+          <div className="center-content">
             <h2>Welcome back</h2>
-            <p className='login'>
+            <p className="login">
               Login into your hydrogen dashboard with your credentials
             </p>
           </div>
           <form onSubmit={handleSubmit}>
-            <div className='Email-input'>
+            <div className="Email-input">
               <label>Email or Phone number</label> <br />
               <input
-                type='text'
-                name='email'
+                type="text"
+                name="email"
                 value={email}
-                placeholder='Enter your email address or phone number'
+                placeholder="Enter your email address or phone number"
                 onChange={handleChange}
               />
             </div>
-            <div className='password-input'>
+            <div className="password-input">
               <div>
                 <label>Password</label>
-                <a href='#'>Forget Password</a>
+                <a href="#">Forget Password</a>
               </div>
               <input
-                type='password'
-                name='password'
+                type="password"
+                name="password"
                 value={password}
-                placeholder='***********'
+                placeholder="***********"
                 onChange={handleChange}
               />
             </div>
-            {error && <p className='error'>{error}</p>}
-            <div className='check-box'>
-              <input type='checkbox' /> <span>Remember me</span>
+            {error && <p className="error">{error}</p>}
+            <div className="check-box">
+              <input type="checkbox" /> <span>Remember me</span>
             </div>
             {/* <button onClick={handleSubmit}>{loading? 'loading...': 'Login'}</button> <br /> <br /> */}
-            <button type='submit'>{loading ? "loading..." : "Login"}</button>{" "}
+            {/* <button type='submit'>{loading ? "loading..." : "Login"}</button>{" "} */}
             <br /> <br />
           </form>
-          <Link style={{ color: "white" }} to='/dashboard'>
-            <button className=''>Dashboard</button>
+          <Link style={{ color: "white" }} to="/dashboard">
+            <button className="">Dashboard</button>
           </Link>
-          <div className='join'>
+          <div className="join">
             <p>
-              Don't have an account yet? <span>Join Hydrogen Payroll</span>
+              Don't have an account yet? <span>Join Pro-stack Payroll</span>
             </p>
           </div>
         </div>
